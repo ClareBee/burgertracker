@@ -1,0 +1,22 @@
+<form action="/applyingdeals/<%=@applyingdeal.id%>" method="post">
+  <label>
+  Select a Deal:
+    <select name="deal_id">
+      <% for deal in @deals %>
+      <option value="<%= deal.id %>"><%= deal.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+
+    Select a burger:
+    <select name="burger_id">
+      <% for burger in @burgers %>
+      <option value="<%= burger.id %>"><%= burger.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="Apply Deal!">
+</form>

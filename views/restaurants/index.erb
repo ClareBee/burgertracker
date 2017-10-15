@@ -1,0 +1,24 @@
+<h1>Restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Location</th>
+    <th></th>
+    <th>Image</th>
+    <th></th>
+    <th>Burgers Available</th>
+  </tr>
+  <% for restaurant in @restaurants %>
+  <tr>
+    <td><%= restaurant.name %></td>
+    <td>|</td>
+    <td><%= restaurant.location %></td>
+    <td>|</td>
+    <td><img src="<%=restaurant.url%>"></td>
+    <td>|</td>
+    <td><%= restaurant.burgers %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,13 @@
+<h2>Here's your burger: </h2>
+<p>Name: <%= @burger.name%></p>
+<p>Price: <%= @burger.price %></p>
+<p>Vegetarian? <%= @burger.veg %></p>
+<!-- replace with function: -->
+<p>Available at: <%=@burger.find_restaurant %></p>
+
+<a href="/burgers/<%=@burger.id%>/edit">Made a mistake?</a>
+
+<p>OR</p>
+<form  action="/burgers/<%=@burger.id%>/delete" method="post">
+  <input type="submit" value="Delete" id="delete"/>
+</form>

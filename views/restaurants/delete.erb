@@ -1,0 +1,7 @@
+<p>Name: <%= @restaurant.name() %> </p>
+<p>Last Name: <%= @restaurant.location() %> </p>
+<!-- <img src="/<%=@restaurant.url%>"></img> -->
+
+<form class="" action="/restaurants/<%= @restaurant.id %>/delete" method="post">
+  <input type="submit" name="" value="Delete" id="delete">
+</form>

@@ -1,0 +1,14 @@
+<h2>Here's the restaurant: </h2>
+<p>Name: <%= @restaurant.name%></p>
+<p>Location: <%= @restaurant.location %></p>
+<!-- replace with function: -->
+<p>Burgers Available Here: <%=@restaurant.burgers %></p>
+
+
+<a href="/restaurants/<%=@restaurant.id%>/edit">Made a mistake?</a>
+
+<p>OR</p>
+
+<form  action="/restaurants/<%=@restaurant.id%>/delete" method="post">
+  <input type="submit" value="Delete" id="delete"/>
+</form>

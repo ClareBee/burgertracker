@@ -1,0 +1,22 @@
+<h1>Burger</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Price</th>
+    <th>Vegetarian?</th>
+  </tr>
+  <% for burger in @burgers %>
+  <tr>
+    <td><%= burger.name %></td>
+    <td>£<%= '%.2f' % burger.price %></td>
+    <% if burger.veg == "f" %>
+    <td><%= "No" %></td>
+    <% elsif burger.veg == "t" %>
+    <td> <%= "Yes" %></td>
+      </td>
+    </tr>
+    <% end %>
+    <% end %>
+</table>

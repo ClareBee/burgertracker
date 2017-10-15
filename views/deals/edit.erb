@@ -1,0 +1,29 @@
+<h1>Edit the Deal</h1>
+<form action="/deals/<%= @deal.id %>" method="POST">
+<fieldset>
+
+  <select name="restaurant_id" id="rest>">
+  <% @restaurants.each do |restaurant|%>
+    <option id ="restaurants" value="<%= restaurant.id %>"><%= restaurant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="@deal.name">
+  <label for="discount">Discount:</label>
+  <input type="number" name="discount" id="discount" value=@deal.value>
+  <label for="day">Day?</label>
+  <select name="day" id="weekdays>">
+    <option id ="week" value="Monday">Monday</option>
+  <option class ="week" value="Tuesday">Tuesday</option>
+  <option class ="rest" value="Wednesday">Wednesday</option>
+  <option class ="week" value="Thursday">Thursday</option>
+  <option class ="week" value="Friday">Friday</option>
+  <option class ="week" value="Saturday">Saturday</option>
+  <option class ="week" value="Sunday">Sunday</option>
+  </select>
+  <input type="text" name="veg" id="day">
+</fieldset>
+<input class="btn btn--action" type='submit' value="Edit!">
+
+</form>

@@ -1,0 +1,19 @@
+<h1>New burgers</h1>
+<form action="/burgers" method="POST">
+<fieldset>
+
+  <select name="restaurant_id" id="rest>">
+  <% @restaurants.each do |restaurant|%>
+    <option id ="rest" value="<%= restaurant.id %>"><%= restaurant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name">
+  <label for="price">Price:</label>
+  <input type="number" min="1" step=".01" name="price" id="price">
+  <label for="veg">Vegetarian?</label>
+  <input type="text" name="veg" id="veg">
+  <input class="btn btn--action" type='submit' value="New Burger!">
+</fieldset>
+</form>

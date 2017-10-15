@@ -1,0 +1,40 @@
+
+<h1>Discounts from Deals</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/applyingdeals/new">New deal!</a>
+</p>
+
+
+<label for="day">Search by day:</label>
+<select name="day" id="weekdays>">
+    <option class ="week" value="Monday">Monday</option>
+    <option class ="week" value="Tuesday">Tuesday</option>
+    <option class ="rest" value="Wednesday">Wednesday</option>
+    <option class ="week" value="Thursday">Thursday</option>
+    <option class ="week" value="Friday">Friday</option>
+    <option class ="week" value="Saturday">Saturday</option>
+    <option class ="week" value="Sunday">Sunday</option>
+</select>
+<% for deal in @deals %>
+    <%=deal.find_burgers()%>
+<% end %>
+
+
+
+<ul>
+  <% for discount in @applyingdeals %>
+  <li>
+    <p> Available at <%= discount.deal.restaurant %> on <%=discount.deal.day %>s </p>
+  <p><%= discount.deal.name %> <%= discount.burger.name %> </p>
+  <p>Original price: £<%= '%.2f' % discount.burger.price %></p>
+  <p>New price: £<%= '%.2f' % discount.deal.savings(discount.burger) %></p>
+  <p>Amount saved: £<%= '%.2f' % (discount.burger.price - discount.deal.savings(discount.burger))%></p>
+
+      <form action="/applyingdeals/<%= discount.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>

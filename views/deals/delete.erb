@@ -1,0 +1,6 @@
+<p>Name: <%= @deal.name() %> </p>
+<p>Day: <%= @deal.day() %> </p>
+
+<form class="" action="/deals/<%= @deal.id %>/delete" method="post">
+  <input type="submit" name="" value="Delete" id="delete">
+</form>

@@ -1,0 +1,26 @@
+<h1>Deals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Discount</th>
+    <th></th>
+    <th>Day</th>
+    <th></th>
+    <th>Restaurant</th>
+    <th></th>
+    <th>See burgers included</th>
+  </tr>
+  <% for deal in @deals %>
+  <tr>
+    <td><%= deal.name %></td>
+    <td>|</td>
+    <td><%= (deal.discount * 100).round(0) %>% off</td>
+    <td>|</td>
+    <td><%=deal.restaurant%></td>
+    <td>|</td>
+    <td><%=deal.find_burgers %></a>
+  </tr>
+  <% end %>
+</table>

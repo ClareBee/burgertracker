@@ -1,0 +1,6 @@
+<p>Name: <%= @burger.name() %> </p>
+<p>Price: <%= @burger.price() %> </p>
+
+<form class="" action="/burgers/<%= @burger.id %>/delete" method="post">
+  <input type="submit" name="" value="Delete" id="delete">
+</form>
