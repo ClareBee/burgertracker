@@ -63,6 +63,14 @@ deal2 = Deal.new ({
   })
 deal2.save()
 
+deal3 = Deal.new ({
+  'name'=> "Half Price Fridays",
+  'restaurant_id' => restaurant1.id,
+  'discount' => 0.50,
+  'day' => "Friday"
+  })
+deal3.save()
+
 applyingdeal1 = ApplyingDeal.new ({
   'burger_id' => burger1.id,
   'deal_id' => deal1.id
@@ -77,9 +85,15 @@ applyingdeal2.save()
 
 applyingdeal3 = ApplyingDeal.new ({
   'burger_id' => burger3.id,
-  'deal_id' => deal2.id
+  'deal_id' => deal1.id
   })
 applyingdeal3.save()
+
+applyingdeal4 = ApplyingDeal.new ({
+  'burger_id' => burger1.id,
+  'deal_id' => deal2.id
+  })
+applyingdeal4.save()
 
 binding.pry
 nil

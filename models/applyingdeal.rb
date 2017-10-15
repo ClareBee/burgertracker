@@ -73,12 +73,14 @@ class ApplyingDeal
     values = [@id]
     SqlRunner.run(sql, values)
   end
-  # def deal_name()
-  #   sql = "SELECT name from deals where id = $1;"
-  #   values = [@deal_id]
-  #   results = SqlRunner.run(sql, values).first
-  #   return results['name']
-  # end
+
+  def all_burgers()
+    sql = "SELECT burgers.* FROM burgers INNER JOIN deals ON burgers.restaurant_id = deals.restaurant_id WHERE deals.id = $1;"
+    values = [@deal_id]
+    results = SqlRunner.run(sql, values)
+    array = results.map {|every| Burger.new(every).name}
+    return array.join(", ")
+  end
 
 
 end

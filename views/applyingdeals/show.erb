@@ -1,10 +1,11 @@
 <h2>Here's your deal: </h2>
-<p>Name: <%= @applyingdeal.deal.name%></p>
-<p>Discount: <%= @applyingdeal.deal.discount %></p>
-<p>Available at: <%=@applyingdeal.deal.restaurant %></p>
+  <p>Name: <%= @applyingdeal.deal.name%></p>
+  <p>Discount: <%= @applyingdeal.deal.discount %></p>
+  <p>Available at: <%=@applyingdeal.deal.restaurant %> on <%=@applyingdeal.deal.day%></p>
+  <p>Applies to: <%= @applyingdeal.all_burgers %> </p>
 
 <a href="/deals/<%=@applyingdeal.deal.id%>/edit">Made a mistake?</a>
-
+<a href="/applyingdeals/new">Add another burger to the deal?</a>
 <p>OR</p>
 <form  action="/deals/<%=@applyingdeal.deal.id%>/delete" method="post">
   <input type="submit" value="Delete" id="delete"/>

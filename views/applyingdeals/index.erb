@@ -20,21 +20,15 @@
 <!-- insert search function here -->
 
 
-
   <% for discount in @applyingdeals %>
 
-
-  <p>Discount Name:<%= discount.deal.name %> </p>
-  <p>Applies to: <%= discount.burger.name %> </p>
-  <p> Available at <%= discount.deal.restaurant %> on <%=discount.deal.day %>s </p>
-  <p>Original Price: £<%= '%.2f' % discount.burger.price.to_f %></p>
-  <p>New Price: £<%= '%.2f' % (discount.burger.price.to_f - (discount.deal.discount.to_f * discount.burger.price.to_f)) %></p>
-  <p>Amount saved: £<%= '%.2f' % (discount.deal.discount.to_f * discount.burger.price.to_f) %></p>
-
-      <form action="/applyingdeals/<%= discount.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
-  </li>
+    <p>Discount Name:<%= discount.deal.name %> </p>
+    <p>Applies to: <%= discount.burger.name %> </p>
+    <p> Available at <%= discount.deal.restaurant %> on <%=discount.deal.day %>s </p>
+    <p>Original Price: £<%= '%.2f' % discount.burger.price.to_f %></p>
+    <p>New Price: £<%= '%.2f' % (discount.burger.price.to_f - (discount.deal.discount.to_f * discount.burger.price.to_f)) %></p>
+    <p>Amount saved: £<%= '%.2f' % (discount.deal.discount.to_f * discount.burger.price.to_f) %></p>
+    <form action="/applyingdeals/<%= discount.id %>/delete" method="POST">
+        <input class="" type="submit" value="delete" />
+    </form>
   <% end %>
-</ul>
