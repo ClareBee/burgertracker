@@ -1,11 +1,12 @@
-<h2>Here's the restaurant: </h2>
+<h2>Here's the Restaurant You Added: </h2>
 <p>Name: <%= @restaurant.name%></p>
 <p>Location: <%= @restaurant.location %></p>
 <!-- replace with function: -->
-<p>Burgers Available Here: <%=@restaurant.burgers %></p>
+<!-- why does this fail if there aren't any burgers yet? -->
+<p>Burgers Available Here So Far: <%=@restaurant.burgers %></p>
+<img src="/images/<%=@restaurant.url %>" alt="burger">
 
-
-<a href="/restaurants/<%=@restaurant.id%>/edit">Made a mistake?</a>
+<a href="/restaurants/<%= @restaurant.id %>/edit">Made a mistake? Edit it here.</a>
 
 <p>OR</p>
 

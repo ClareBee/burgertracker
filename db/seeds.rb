@@ -12,14 +12,14 @@ Restaurant.delete_all()
 restaurant1 = Restaurant.new ({
   'name' => "Bob's Burgers",
   'location' => "14 Gordon Street",
-  'url' => "/images/bobsburgers.jpeg"
+  'url' => "/images/kyle-mills-322995.jpg"
 })
 restaurant1.save()
 
 restaurant2 = Restaurant.new ({
   'name' => "Burgerama",
   'location' => "56 Chapel Hill",
-  'url' => "/images/burger.jpeg"
+  'url' => "/images/burger.png"
   })
 restaurant2.save()
 
