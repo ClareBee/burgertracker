@@ -33,5 +33,12 @@
 <h1>Deals by day of the week</h1>
 <% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]%>
 <% for day in @days %>
-<p> <%=day %> = <%= Deal.list(day) %>
+<p> <%=day %> = <%= Deal.list(day) %></p>
 <% end %>
+
+<!-- form action get? -->
+<select name="day" id="day>">
+<% @days.each do |aday|%>
+  <option id ="daybox" value="<%= day %>"> <%= aday %></option>
+<% end %>
+</select>
