@@ -28,6 +28,7 @@ post '/deals' do
 end
 
 post '/deals/:id/delete' do
-  Deal.delete(params[:id])
+  deal = Deal.find(params['id'])
+  deal.delete()
   erb (:"deals/delete")
 end

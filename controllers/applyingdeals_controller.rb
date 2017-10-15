@@ -56,6 +56,7 @@ end
 
 #destroy
 post '/applyingdeals/:id/delete' do
-  ApplyingDeal.delete(params['id'])
+  deal = ApplyingDeal.find(params['id'])
+  deal.delete()
   erb( :"applyingdeals/delete" )
 end
