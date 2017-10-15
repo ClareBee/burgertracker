@@ -1,4 +1,6 @@
 require_relative( '../db/sql_runner' )
+require_relative( '../models/deal')
+require_relative( '../models/burger')
 
 class ApplyingDeal
 
@@ -75,12 +77,27 @@ class ApplyingDeal
   end
 
   def all_burgers()
-    sql = "SELECT burgers.* FROM burgers INNER JOIN deals ON burgers.restaurant_id = deals.restaurant_id WHERE deals.id = $1;"
-    values = [@deal_id]
+    sql = "SELECT burgers.* FROM burgers WHERE burgers.id = $1;"
+    values = [@burger_id]
     results = SqlRunner.run(sql, values)
     array = results.map {|every| Burger.new(every).name}
     return array.join(", ")
   end
 
+  def self.burgers_by_day(day)
+    sql = "SELECT burgers.* FROM burgers INNER JOIN deals ON burgers.restaurant_id = deals.restaurant_id WHERE deals.day = $1;"
+    values = [day]
+    results = SqlRunner.run(sql, values)
+    array = results.map {|every| Burger.new(every).name}
+    return array.join(", ")
+  end
 
+# why doesn't this work?
+  def self.all_deals()
+    sql = "SELECT deals.* FROM deals INNER JOIN burgers ON deals.restaurant_id = burgers.restaurant_id WHERE deals.id = $1;"
+    values = [@deal_id]
+    results = SqlRunner.run(sql, values)
+    array = results.map {|every| Deal.new(every)}
+    return array
+  end
 end

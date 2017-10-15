@@ -75,7 +75,7 @@ class Deal
   end
 
 # check if this works
-  def self.find_day(day)
+  def self.list(day)
     sql = "SELECT name FROM deals WHERE day = $1;"
     values = [day]
     results = SqlRunner.run( sql, values )
@@ -99,6 +99,7 @@ class Deal
     array = results.map {|name| name['name']}
     return array.join(", ")
   end
+
 
 
 end
