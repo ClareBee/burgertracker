@@ -12,7 +12,7 @@ class Deal
     @id = options['id'].to_i if options['id']
     @restaurant_id = options['restaurant_id'].to_i
     @name = options['name']
-    @discount = options['discount'].to_f
+    @discount = options['discount']
     @day = options['day']
   end
 
@@ -68,10 +68,10 @@ class Deal
   end
 
   def self.find(id)
-    sql = "SELECT * FROM applyingdeals WHERE id = $1;"
+    sql = "SELECT * FROM deals WHERE id = $1;"
     values =[id]
     results = SqlRunner.run(sql, values)
-    return ApplyingDeal.new( results.first)
+    return Deal.new( results.first)
   end
 
 # check if this works
@@ -90,10 +90,7 @@ class Deal
     return results.first['name']
   end
 
-  def savings(burger)
-    savings = burger.price * @discount
-    @new_price = burger.price - savings
-  end
+
 
   def find_burgers()
     sql = "SELECT name FROM burgers WHERE restaurant_id = $1;"

@@ -68,6 +68,11 @@ class ApplyingDeal
     return Deal.new( results.first )
   end
 
+  def delete()
+    sql = "DELETE FROM applyingdeals where id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
   # def deal_name()
   #   sql = "SELECT name from deals where id = $1;"
   #   values = [@deal_id]
