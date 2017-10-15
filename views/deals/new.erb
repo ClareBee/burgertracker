@@ -9,11 +9,11 @@
   </select>
 
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name">
-  <label for="discount">Discount:</label>
-  <input type="number" name="discount" id="discount">
-  <label for="day">Day?</label>
-  <select name="day" id="weekdays>">
+  <input type="text" name="name" id="name" required>
+  <label for="discount">% Discount:</label>
+  <input type="number" min="0" max="1" step=".01" placeholder="Enter as a decimal" name="discount" id="discount" required>
+  <label for="day">Day</label>
+  <select name="day" id="weekdays">
     <option class ="week" value="Monday">Monday</option>
     <option class ="week" value="Tuesday">Tuesday</option>
     <option class ="rest" value="Wednesday">Wednesday</option>

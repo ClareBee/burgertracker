@@ -72,6 +72,7 @@ class Burger
     SqlRunner.run( sql, values)
   end
 
+# why doesn't this work anymore - do i have to do a Restaurant.new here?
   def find_restaurant
     sql = "SELECT restaurants.name FROM restaurants INNER JOIN burgers ON restaurants.id = $1;"
     values = [@id]

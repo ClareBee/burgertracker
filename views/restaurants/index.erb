@@ -19,6 +19,10 @@
     <td><img src="<%=restaurant.url%>"></td>
     <td>|</td>
     <td><%= restaurant.burgers %></td>
+    <td>|</td>
+      <td><form action="/restaurants/<%=restaurant.id%>/delete" method="post">
+      <input type="submit" value="Delete" id="delete"/>
+    </form></td>
   </tr>
   <% end %>
 </table>

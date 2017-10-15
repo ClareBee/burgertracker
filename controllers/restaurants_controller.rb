@@ -51,5 +51,5 @@ end
 post '/restaurants/:id/delete' do
   restaurant = Restaurant.find(params['id'])
   restaurant.delete()
-  erb( :"restaurants/delete" )
+  redirect to("/restaurants")
 end

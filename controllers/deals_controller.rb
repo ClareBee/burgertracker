@@ -30,5 +30,5 @@ end
 post '/deals/:id/delete' do
   deal = Deal.find(params['id'])
   deal.delete()
-  erb (:"deals/delete")
+  redirect to("/deals")
 end

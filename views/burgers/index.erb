@@ -1,22 +1,30 @@
-<h1>Burger</h1>
+<h1>Burgers Around Town</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
     <th>Price</th>
+    <th></th>
     <th>Vegetarian?</th>
   </tr>
   <% for burger in @burgers %>
   <tr>
     <td><%= burger.name %></td>
+    <td>|</td>
     <td>£<%= '%.2f' % burger.price %></td>
+    <td>|</td>
     <% if burger.veg == "f" %>
+
     <td><%= "No" %></td>
     <% elsif burger.veg == "t" %>
     <td> <%= "Yes" %></td>
-      </td>
+      <% end %>
+    <td>
+    <form action="/burgers/<%=burger.id%>/delete" method="post">
+      <input type="submit" value="Delete" id="delete"/>
+    </form></td>
     </tr>
-    <% end %>
+
     <% end %>
 </table>

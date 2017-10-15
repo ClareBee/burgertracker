@@ -10,17 +10,23 @@
     <th></th>
     <th>Restaurant</th>
     <th></th>
-    <th>See burgers included</th>
+
   </tr>
   <% for deal in @deals %>
   <tr>
     <td><%= deal.name %></td>
     <td>|</td>
-    <td><%= (deal.discount * 100).round(0) %>% off</td>
+    <td><%= (deal.discount.to_f * 100).round(0) %>% off</td>
     <td>|</td>
+    <td><%= deal.day %></td>
+    <td>|</td>
+
     <td><%=deal.restaurant%></td>
     <td>|</td>
-    <td><%=deal.find_burgers %></a>
+    <td><form action="/deals/<%=deal.id%>/delete" method="post">
+      <input type="submit" value="Delete" id="delete"/>
+    </form></td>
+
   </tr>
   <% end %>
 </table>

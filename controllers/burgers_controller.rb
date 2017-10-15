@@ -8,6 +8,7 @@ require_relative( '../models/applyingdeal.rb')
 
 
 get '/burgers' do
+  @restaurants = Restaurant.all
   @burgers = Burger.all
   erb ( :"burgers/index" )
 end
@@ -21,7 +22,7 @@ end
 post '/burgers' do
   @burger = Burger.new(params)
   @burger.save
-  erb( :"burgers/create")
+  redirect to( "/burgers")
 end
 
 #read
@@ -50,5 +51,5 @@ end
 post '/burgers/:id/delete' do
   burger = Burger.find(params['id'])
   burger.delete()
-  erb( :"burgers/delete" )
+  redirect to("/burgers")
 end
