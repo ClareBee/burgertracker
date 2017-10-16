@@ -1,1 +1,19 @@
-<% for restaurant in @deals.restaurant %>
+
+<table>
+<th>Burger:</th>
+<th></th>
+<th>Price:</th>
+<th>Discount:</th>
+<th>New Price:</th>
+
+<%= @deal.name %>
+<% for burger in @deal.find_burgers %>
+<tr>
+<td> <%= burger.name %></td>
+<td></td>
+<td>£<%= '%.2f' % burger.price %></td>
+<td>£<%= '%.2f' % burger.discount(@deal) %></td>
+<td>£<%= '%.2f' % (burger.price.to_f - burger.discount(@deal).to_f) %></td>
+<% end %>
+</tr>
+</table>

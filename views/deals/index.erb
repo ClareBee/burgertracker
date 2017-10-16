@@ -16,7 +16,7 @@
   <tr>
     <td><%= deal.day %></td>
     <td>|</td>
-    <td><a href="/applyingdeals"><%= deal.name %></a></td>
+    <td><a href="/deals/<%= deal.id%>"><%= deal.name %></a></td>
     <td>|</td>
     <td><%= (deal.discount.to_f * 100).round(0) %>% off</td>
     <td>|</td>

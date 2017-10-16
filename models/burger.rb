@@ -87,4 +87,9 @@ class Burger
     return Burger.new(results.first)
   end
 
+  def discount(deal)
+   discount = (@price.to_f * deal.discount.to_f)
+   return discount
+  end
+
 end

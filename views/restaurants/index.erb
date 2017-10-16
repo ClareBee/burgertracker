@@ -12,6 +12,9 @@
   </tr>
   <% for restaurant in @restaurants %>
   <p><a href="#<%=restaurant.name%>"> <%= restaurant.name %> </a> </p>
+  <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
+  <input type="submit" value="Delete Restaurant" id="delete"/>
+</form>
   <% end %>
   <% for restaurant in @restaurants %>
   <tr>

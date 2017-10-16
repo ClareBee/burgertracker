@@ -21,6 +21,12 @@ get '/deals/new' do
   erb ( :"deals/new" )
 end
 
+get '/deals/:id' do
+  @deal = Deal.find(params['id'])
+  @burgers = Burger.all()
+  erb ( :"deals/show")
+end
+
 post '/deals' do
   deal = Deal.new(params)
   deal.save
