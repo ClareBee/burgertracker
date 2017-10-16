@@ -89,10 +89,14 @@ class Deal
     values =[@restaurant_id]
     results = SqlRunner.run( sql, values )
     return Restaurant.new(results.first)
-
   end
 
-
+  def self.restaurant()
+    sql = "SELECT restaurants.* FROM restaurants WHERE restaurants.id = $1;"
+    values =[@restaurant_id]
+    results = SqlRunner.run( sql, values )
+    return Restaurant.new(results.first)
+  end
 
   def find_burgers()
     sql = "SELECT * FROM burgers WHERE restaurant_id = $1;"
@@ -104,7 +108,7 @@ class Deal
 
 
 
-  
+
 
 
 

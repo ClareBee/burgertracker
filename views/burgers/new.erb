@@ -4,7 +4,7 @@
 
   <select name="restaurant_id" id="rest>">
   <% @restaurants.each do |restaurant|%>
-    <option id ="rest" value="<%= restaurant.id %>"><%= restaurant.name %></option>
+    <option value="<%= restaurant.id %>"><%= restaurant.name %></option>
     <% end %>
   </select>
 

@@ -1,6 +1,6 @@
 <h1>Restaurants</h1>
 
-<table>
+<table name="top">
   <tr>
     <th>Name</th>
     <th></th>
@@ -11,8 +11,11 @@
     <th>Menu</th>
   </tr>
   <% for restaurant in @restaurants %>
+  <p><a href="#<%=restaurant.name%>"> <%= restaurant.name %> </a> </p>
+  <% end %>
+  <% for restaurant in @restaurants %>
   <tr>
-    <td><%= restaurant.name %></td>
+    <td><a name="<%= restaurant.name%>"><%= restaurant.name %></a>, <a href="#top">Top</a></td>
     <td>|</td>
     <td><%= restaurant.location %></td>
     <td>|</td>
@@ -22,18 +25,24 @@
 
       <% for burger in restaurant.burgers %>
       <td>
-      <%= burger.name %>
+      <a href="/burgers/<%=burger.id%>"><%= burger.name %></a>
       <br>
       £<%= burger.price%>
 
       <td>|</td>
       <%end%>
-
+      <td><% for deal in restaurant.deals %>
+      <%=   deal.name %>
+      <% end %>
     </td>
     <td></td>
       <td><form action="/restaurants/<%=restaurant.id%>/delete" method="post">
-      <input type="submit" value="Delete" id="delete"/>
+      <input type="submit" value="Delete Restaurant" id="delete"/>
     </form></td>
+    <td><form action="/burgers/new">
+    <input type="submit" value="Add a new burger" />
+</form></td>
+
   </tr>
   <% end %>
 </table>

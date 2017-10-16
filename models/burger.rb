@@ -74,11 +74,10 @@ class Burger
 
 # why doesn't this work anymore - do i have to do a Restaurant.new here?
   def find_restaurant
-    sql = "SELECT restaurants.* FROM restaurants INNER JOIN burgers ON restaurants.id = $1;"
-    values = [@id]
+    sql = "SELECT * FROM restaurants WHERE restaurants.id = $1;"
+    values = [@restaurant_id]
     results = SqlRunner.run(sql, values)
-    array = results.map {|rest| Restaurant.new(rest)}
-    return array
+    return Restaurant.new(results.first)
   end
 
   def self.find(id)
@@ -87,9 +86,5 @@ class Burger
     results = SqlRunner.run(sql, values)
     return Burger.new(results.first)
   end
-
-
-
-
 
 end
