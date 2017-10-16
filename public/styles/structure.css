@@ -1,9 +1,33 @@
+
 body {
   background-color: #F1F1F9;
   font-family: 'Open Sans', sans-serif;
   color: #221E22;
+  margin: 0;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 600px;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+
+}
+
 h1 {
   font-family: 'Bevan', cursive;
   color: #221E22;
+  font-size: 50px;
+}
+
+div#allburgers {
+  margin-left: 20px;
+  padding: 25px;
 }

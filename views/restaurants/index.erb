@@ -1,8 +1,15 @@
-<h1>Restaurants</h1>
+<section>
+  
+  <div id="restaurantindex">
 
-  <% for restaurant in @restaurants %>
-  <p><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </p>
-  <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
-  <input type="submit" value="Delete Restaurant" id="delete"/>
-</form>
-  <% end %>
+    <h1>Restaurants</h1>
+
+      <% for restaurant in @restaurants %>
+        <p><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </p>
+        <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
+          <input type="submit" value="Delete Restaurant" id="delete"/>
+        </form>
+      <% end %>
+
+  </div>
+</section>

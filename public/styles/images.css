@@ -1,0 +1,16 @@
+img#burgerbar {
+  border-bottom: 10px solid #FFCF4D;
+}
+
+img#logo {
+  background-color: #FFCF4D;
+  border-radius: 10px;
+}
+
+img#newburgerlogo {
+  width: 10%;
+  float: left;
+  margin: 10px 50px 25px 25px;
+  background-color: #F21B3F;
+  border-radius: 10px;
+}
