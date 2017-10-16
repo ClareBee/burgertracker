@@ -7,6 +7,9 @@
 <th>New Price:</th>
 
 <%= @deal.name %>
+<form action="/applyingdeals/new">
+<input type="submit" value="Add a new burger to the deal" />
+</form>
 <% for burger in @deal.find_burgers %>
 <tr>
 <td> <%= burger.name %></td>
@@ -14,6 +17,8 @@
 <td>£<%= '%.2f' % burger.price %></td>
 <td>£<%= '%.2f' % burger.discount(@deal) %></td>
 <td>£<%= '%.2f' % (burger.price.to_f - burger.discount(@deal).to_f) %></td>
+<td>
 <% end %>
+
 </tr>
 </table>

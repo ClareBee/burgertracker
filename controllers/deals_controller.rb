@@ -35,6 +35,7 @@ end
 
 post '/deals/:id/delete' do
   deal = Deal.find(params['id'])
+  @burgers = Burger.all()
   deal.delete()
   redirect to("/deals")
 end
