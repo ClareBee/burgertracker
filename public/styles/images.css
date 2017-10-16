@@ -14,3 +14,12 @@ img#newburgerlogo {
   background-color: #F21B3F;
   border-radius: 10px;
 }
+
+img#bwburger {
+  width: 400px;
+  float: right;
+
+  border-radius: 10px;
+  padding: 5px;
+  margin: 15px;
+}

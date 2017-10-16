@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  /*color: #FFCF4D;*/
+  color: #F21B3F;
+}
+
+#delete {
+  font-family: 'Bevan', cursive ;
+  background-color: #FFCF4D;
+  border-radius: 10px;
+}

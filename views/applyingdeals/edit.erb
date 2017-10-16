@@ -1,4 +1,5 @@
-<form action="/applyingdeals/<%=@applyingdeal.id%>" method="post">
+<form class="newentry" action="/applyingdeals/<%=@applyingdeal.id%>" method="post">
+  <fieldset>
   <label>
   Select a Deal:
     <select name="deal_id">
@@ -19,4 +20,5 @@
   </label>
 
   <input class="btn" type='submit' value="Apply Deal!">
+</fieldset>
 </form>

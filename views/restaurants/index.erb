@@ -1,15 +1,15 @@
 <section>
-  
+  <img id="bwburger" src="/images/blackandwhiteburger.jpg">
   <div id="restaurantindex">
-
     <h1>Restaurants</h1>
 
       <% for restaurant in @restaurants %>
-        <p><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </p>
+        <h3><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </h3>
         <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
           <input type="submit" value="Delete Restaurant" id="delete"/>
         </form>
       <% end %>
 
   </div>
+
 </section>

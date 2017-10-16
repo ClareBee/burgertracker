@@ -2,9 +2,11 @@
 body {
   background-color: #F1F1F9;
   font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #221E22;
   margin: 0;
 }
+
 
 .container {
   display: flex;
@@ -21,7 +23,7 @@ body {
 
 }
 
-h1 {
+h1, h2, h3 {
   font-family: 'Bevan', cursive;
   color: #221E22;
   font-size: 50px;
@@ -29,5 +31,16 @@ h1 {
 
 div#allburgers {
   margin-left: 20px;
-  padding: 25px;
+  padding: 0px 25px;
+}
+
+div#restaurantindex {
+  margin-left: 20px;
+  padding: 0px 25px 25px 25px;
+}
+
+table {
+  background-color: #FBFBFD;
+  border: 5px solid #D0CDD7;
+  border-radius: 15px;
 }
