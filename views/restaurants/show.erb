@@ -1,18 +1,20 @@
-<h2>Here's the Restaurant You Added: </h2>
-<p>Name: <%= @restaurant.name%></p>
+
+<h1><%= @restaurant.name%></h1>
 <p>Location: <%= @restaurant.location %></p>
 <!-- replace with function: -->
 <!-- why does this fail if there aren't any burgers yet? -->
-<p>Burgers Available Here So Far: <% for burger in @restaurant.burgers %>
-  <br>
+<h1>Menu So Far: <% for burger in @restaurant.burgers %></h1>
                                 <a href="/burgers/<%=burger.id%>"><%= burger.name %></a>
+
+                                      £<%= burger.price%><br>
                                 <% end %></p>
-<p>Deals Available Here: <% for deal in @restaurant.deals %>
+<h1>Deals for <%=@restaurant.name %></h1>
+                    <% for deal in @restaurant.deals %>
+                        <a href="/deals/<%= deal.id %>"><%= deal.name %></a>
                         <br>
-                        <%= deal.name %>
-                        <% end %>
+                    <% end %>
                         <br>
-<img src="/images/<%=@restaurant.url %>" alt="burger">
+<img src="images/<%=@restaurant.url%>" alt="burger">
 <br>
 <a href="/restaurants/<%= @restaurant.id %>/edit">Made a mistake? Edit it here.</a>
 

@@ -1,51 +1,8 @@
 <h1>Restaurants</h1>
 
-<table name="top">
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Location</th>
-    <th></th>
-    <th>Image</th>
-    <th></th>
-    <th>Menu</th>
-  </tr>
   <% for restaurant in @restaurants %>
-  <p><a href="#<%=restaurant.name%>"> <%= restaurant.name %> </a> </p>
+  <p><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </p>
   <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
   <input type="submit" value="Delete Restaurant" id="delete"/>
 </form>
   <% end %>
-  <% for restaurant in @restaurants %>
-  <tr>
-    <td><a name="<%= restaurant.name%>"><%= restaurant.name %></a>, <a href="#top">Top</a></td>
-    <td>|</td>
-    <td><%= restaurant.location %></td>
-    <td>|</td>
-    <td><img src="<%=restaurant.url%>"></td>
-    <td>|</td>
-
-
-      <% for burger in restaurant.burgers %>
-      <td>
-      <a href="/burgers/<%=burger.id%>"><%= burger.name %></a>
-      <br>
-      £<%= burger.price%>
-
-      <td>|</td>
-      <%end%>
-      <td><% for deal in restaurant.deals %>
-      <%=   deal.name %>
-      <% end %>
-    </td>
-    <td></td>
-      <td><form action="/restaurants/<%=restaurant.id%>/delete" method="post">
-      <input type="submit" value="Delete Restaurant" id="delete"/>
-    </form></td>
-    <td><form action="/burgers/new">
-    <input type="submit" value="Add a new burger" />
-</form></td>
-
-  </tr>
-  <% end %>
-</table>

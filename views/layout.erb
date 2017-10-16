@@ -5,23 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BurgerTracker</title>
+
+  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" tyoe="text/css" href="/styles/nav.css">
+  <link href="https://fonts.googleapis.com/css?family=Bevan|Open+Sans" rel="stylesheet">
+  <link rel="icon" href="/images/burger.png" />
 </head>
+
+
   <body>
+  <nav class="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href= "/restaurants">Restaurants</a></li>
+    <li><a href= "/deals">Deals</a></li>
+    <li><a href="/burgers">Burgers</a></li>
+    <li><a href="/restaurants/new">New Restaurant</a></li>
+    <li><a href="/burgers/new">New Burger</a></li>
+    <li><a href="/deals/new">New Deal</a></li>
+    <li><a href="/applyingdeals/new">Add burgers to a deal</a></li>
+</ul>
+</nav>
+<header>
 
-    <a href="/">Home</a>
-  <div>
-    <a href= "/restaurants">Restaurants</a>
-    <a href= "/deals">Deals</a>
-    <a href="/burgers">Burgers</a>
-  </div>
-
-  <div>
-    <a href="/restaurants/new">New Restaurant</a>
-    <a href="/burgers/new">New Burger</a>
-    <a href="/deals/new">New Deal</a>
-    <a href="/applyingdeals/new">Add burgers to a deal</a>
-  </div>
-
+</header>
       <section>
         <%= yield %>
       </section>
