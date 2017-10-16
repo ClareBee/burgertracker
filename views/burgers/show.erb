@@ -1,13 +1,13 @@
 <h2>Here's your burger: </h2>
 <p>Name: <%= @burger.name%></p>
-<p>Price: £<%= @burger.price %></p>
+<p>Usual Price: £<%= @burger.price %></p>
 <p>Vegetarian? <% if @burger.veg == "t" %>
                Yes </p>
                <% elsif @burger.veg == "f" %>
                 No </p>
                 <%end %>
 <!-- replace with function: -->
-<p>Available at: <%= @burger.find_restaurant.name %>
+<p>Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
 
 
 </p>

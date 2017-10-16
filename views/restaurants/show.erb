@@ -3,13 +3,23 @@
 <p>Location: <%= @restaurant.location %></p>
 <!-- replace with function: -->
 <!-- why does this fail if there aren't any burgers yet? -->
-<p>Burgers Available Here So Far: <%=@restaurant.burgers %></p>
+<p>Burgers Available Here So Far: <% for burger in @restaurant.burgers %>
+  <br>
+                                <a href="/burgers/<%=burger.id%>"><%= burger.name %></a>
+                                <% end %></p>
+<p>Deals Available Here: <% for deal in @restaurant.deals %>
+                        <br>
+                        <%= deal.name %>
+                        <% end %>
+                        <br>
 <img src="/images/<%=@restaurant.url %>" alt="burger">
-
+<br>
 <a href="/restaurants/<%= @restaurant.id %>/edit">Made a mistake? Edit it here.</a>
 
 <p>OR</p>
-
+<form action="/burgers/new">
+<input type="submit" value="Add a new burger" />
+</form>
 <form  action="/restaurants/<%=@restaurant.id%>/delete" method="post">
-  <input type="submit" value="Delete" id="delete"/>
+  <input type="submit" value="Delete Restaurant" id="delete"/>
 </form>

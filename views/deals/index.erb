@@ -14,12 +14,15 @@
   </tr>
   <% for deal in @deals %>
   <tr>
-    <td><%= deal.name %></td>
+    <td><%= deal.day %></td>
+    <td>|</td>
+    <td><a href="/applyingdeals"><%= deal.name %></a></td>
     <td>|</td>
     <td><%= (deal.discount.to_f * 100).round(0) %>% off</td>
     <td>|</td>
-    <td><%= deal.day %></td>
-    <td>|</td>
+
+
+
 
     <td><a href="restaurants/<%=deal.restaurant.id%>"><%=deal.restaurant.name %></a></td>
     <td>|</td>
@@ -30,15 +33,15 @@
   <% end %>
 </table>
 
-<h1>Deals by day of the week</h1>
+<!-- <h1>Deals by day of the week</h1>
 <% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]%>
 <% for day in @days %>
 <p> <%=day %> = <%= Deal.list(day) %></p>
 <% end %>
 
-<!-- form action get? -->
-<select name="day" id="day>">
+<!form action get? -->
+<!-- <select name="day" id="day>">
 <% @days.each do |aday|%>
   <option id ="daybox" value="<%= day %>"> <%= aday %></option>
 <% end %>
-</select>
+</select> -->
