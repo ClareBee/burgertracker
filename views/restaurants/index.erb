@@ -8,7 +8,7 @@
     <th></th>
     <th>Image</th>
     <th></th>
-    <th>Burgers Available</th>
+    <th>Menu</th>
   </tr>
   <% for restaurant in @restaurants %>
   <tr>
@@ -18,8 +18,19 @@
     <td>|</td>
     <td><img src="<%=restaurant.url%>"></td>
     <td>|</td>
-    <td><%= restaurant.burgers %></td>
-    <td>|</td>
+
+
+      <% for burger in restaurant.burgers %>
+      <td>
+      <%= burger.name %>
+      <br>
+      £<%= burger.price%>
+
+      <td>|</td>
+      <%end%>
+
+    </td>
+    <td></td>
       <td><form action="/restaurants/<%=restaurant.id%>/delete" method="post">
       <input type="submit" value="Delete" id="delete"/>
     </form></td>

@@ -21,7 +21,7 @@
     <td><%= deal.day %></td>
     <td>|</td>
 
-    <td><%=deal.restaurant%></td>
+    <td><%=deal.restaurant.name %></td>
     <td>|</td>
     <td><form action="/deals/<%=deal.id%>/delete" method="post">
       <input type="submit" value="Delete" id="delete"/>
@@ -33,7 +33,7 @@
 <h1>Deals by day of the week</h1>
 <% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]%>
 <% for day in @days %>
-<p> <%=day %> = <%= Deal.list(day) %></p>
+<p> <%=day %> = <a href="/deals/"<%= Deal.list(day) %></p>
 <% end %>
 
 <!-- form action get? -->

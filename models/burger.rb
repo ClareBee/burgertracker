@@ -1,5 +1,5 @@
 require_relative( '../db/sql_runner' )
-#do i need this and a 'new'?
+require_relative ('../models/restaurant')
 
 class Burger
 
@@ -74,18 +74,20 @@ class Burger
 
 # why doesn't this work anymore - do i have to do a Restaurant.new here?
   def find_restaurant
-    sql = "SELECT restaurants.name FROM restaurants INNER JOIN burgers ON restaurants.id = $1;"
+    sql = "SELECT restaurants.* FROM restaurants INNER JOIN burgers ON restaurants.id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.first['name']
+    array = results.map {|rest| Restaurant.new(rest)}
+    return array
   end
 
   def self.find(id)
     sql = "SELECT * FROM burgers WHERE id = $1;"
     values =[id]
     results = SqlRunner.run(sql, values)
-    return Burger.new( results.first)
+    return Burger.new(results.first)
   end
+
 
 
 

@@ -3,6 +3,7 @@ require_relative( '../models/restaurant')
 require_relative( '../models/burger')
 
 
+
 class Deal
 
   attr_reader :id
@@ -71,12 +72,12 @@ class Deal
     sql = "SELECT * FROM deals WHERE id = $1;"
     values =[id]
     results = SqlRunner.run(sql, values)
-    return Deal.new( results.first)
+    return Deal.new(results.first)
   end
 
 # check if this works
   def self.list(day)
-    sql = "SELECT name FROM deals WHERE day = $1;"
+    sql = "SELECT * FROM deals WHERE day = $1;"
     values = [day]
     results = SqlRunner.run( sql, values )
     array = results.map {|name| name['name'] }
@@ -84,21 +85,26 @@ class Deal
   end
 
   def restaurant()
-    sql = "SELECT restaurants.name FROM restaurants WHERE restaurants.id = $1;"
+    sql = "SELECT restaurants.* FROM restaurants WHERE restaurants.id = $1;"
     values =[@restaurant_id]
     results = SqlRunner.run( sql, values )
-    return results.first['name']
+    return Restaurant.new(results.first)
+
   end
 
 
 
   def find_burgers()
-    sql = "SELECT name FROM burgers WHERE restaurant_id = $1;"
+    sql = "SELECT * FROM burgers WHERE restaurant_id = $1;"
     values = [@restaurant_id]
     results = SqlRunner.run(sql, values)
-    array = results.map {|name| name['name']}
-    return array.join(", ")
+    array = results.map {|name| Burger.new(name)}
+    return array
   end
+
+
+
+  
 
 
 

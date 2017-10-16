@@ -1,6 +1,7 @@
 require_relative( '../db/sql_runner' )
 require_relative( '../models/deal')
 require_relative( '../models/burger')
+require_relative( '../models/restaurant')
 
 class ApplyingDeal
 
@@ -28,6 +29,17 @@ class ApplyingDeal
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE applyingdeals SET
+    (deal_id,
+    burger_id)
+    = (
+    $1, $2
+    ) WHERE id = $3;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM applyingdeals;"
     values = []
@@ -52,7 +64,7 @@ class ApplyingDeal
     sql = "SELECT * FROM applyingdeals WHERE id = $1;"
     values =[id]
     results = SqlRunner.run(sql, values)
-    return ApplyingDeal.new( results.first)
+    return ApplyingDeal.new(results.first)
   end
 
 
@@ -70,6 +82,13 @@ class ApplyingDeal
     return Deal.new( results.first )
   end
 
+  def restaurant()
+    sql = "SELECT restaurants.name FROM restaurants INNER JOIN deals ON restaurants.id = deals.restaurant_id WHERE restaurants.id = $1;"
+    values = [@restaurant_id]
+    results = SqlRunner.run( sql, values )
+    return results
+  end
+
   def delete()
     sql = "DELETE FROM applyingdeals where id = $1;"
     values = [@id]
@@ -80,16 +99,16 @@ class ApplyingDeal
     sql = "SELECT burgers.* FROM burgers WHERE burgers.id = $1;"
     values = [@burger_id]
     results = SqlRunner.run(sql, values)
-    array = results.map {|every| Burger.new(every).name}
-    return array.join(", ")
+    array = results.map {|every| Burger.new(every)}
+    return array
   end
 
   def self.burgers_by_day(day)
     sql = "SELECT burgers.* FROM burgers INNER JOIN deals ON burgers.restaurant_id = deals.restaurant_id WHERE deals.day = $1;"
     values = [day]
     results = SqlRunner.run(sql, values)
-    array = results.map {|every| Burger.new(every).name}
-    return array.join(", ")
+    array = results.map {|every| Burger.new(every)}
+    return array
   end
 
 # why doesn't this work?

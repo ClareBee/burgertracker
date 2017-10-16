@@ -10,7 +10,7 @@
   </tr>
   <% for burger in @burgers %>
   <tr>
-    <td><%= burger.name %></td>
+    <td><a href="/burgers/<%=burger.id%>"><%= burger.name %></a></td>
     <td>|</td>
     <td>£<%= '%.2f' % burger.price %></td>
     <td>|</td>

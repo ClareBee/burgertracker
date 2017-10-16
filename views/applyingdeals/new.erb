@@ -1,24 +1,14 @@
-<h1>Add burgers to a deal</h1>
+<h1>Add burgers to a deal: step one</h1>
 
-<form action="/applyingdeals" method="post">
+<form action="/applyingdeals/new_burger" method="get">
   <label>
-  Select a Deal:
+  Which deal do you want to add a burger to?
     <select name="deal_id">
       <% for deal in @deals %>
-      <option value="<%= deal.id %>"><%= deal.name %></option>
+      <option value="<%= deal.id %>"><%= deal.name %> at <%= deal.restaurant.name %></option>
       <% end %>
     </select>
   </label>
 
-  <label>
-
-    Select a burger:
-    <select name="burger_id">
-      <% for burger in @burgers %>
-      <option value="<%= burger.id %>"><%= burger.name %></option>
-      <% end %>
-    </select>
-  </label>
-
-  <input class="btn btn--action" type='submit' value="Apply Deal!">
+  <input class="btn" type='submit' value="Choose deal">
 </form>

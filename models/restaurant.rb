@@ -30,7 +30,7 @@ class Restaurant
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
-  
+
   def self.find( id )
     sql = "SELECT * FROM restaurants
     WHERE id = $1"
@@ -72,11 +72,19 @@ class Restaurant
   end
 
   def burgers()
-    sql = "SELECT burgers.* FROM burgers WHERE burgers.restaurant_id = $1;"
+    sql = "SELECT * FROM burgers WHERE burgers.restaurant_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    array = results.map {|name| name['name'] }
-    return array.join(", ")
+    array = results.map {|burger| Burger.new(burger)}
+    return array
+  end
+
+  def deals()
+    sql = "SELECT * FROM deals WHERE deals.restaurant_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    array = results.map {|deal| Deal.new(deal)}
+    return array
   end
 
 end

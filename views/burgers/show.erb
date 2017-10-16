@@ -1,9 +1,16 @@
 <h2>Here's your burger: </h2>
 <p>Name: <%= @burger.name%></p>
-<p>Price: <%= @burger.price %></p>
-<p>Vegetarian? <%= @burger.veg %></p>
+<p>Price: £<%= @burger.price %></p>
+<p>Vegetarian? <% if @burger.veg == "t" %>
+               Yes </p>
+               <% elsif @burger.veg == "f" %>
+                No </p>
+                <%end %>
 <!-- replace with function: -->
-<p>Available at: <%=@burger.find_restaurant %></p>
+<p>Available at: <%= @restaurant[0].name %>
+
+
+</p>
 
 <a href="/burgers/<%=@burger.id%>/edit">Made a mistake?</a>
 

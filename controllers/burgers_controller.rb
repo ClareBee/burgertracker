@@ -27,9 +27,8 @@ end
 
 #read
 get '/burgers/:id' do
-  @restaurants = Restaurant.all()
-  @deals = Deal.all()
   @burger = Burger.find(params['id'])
+  @restaurant = @burger.find_restaurant
   erb( :"burgers/show" )
  end
 

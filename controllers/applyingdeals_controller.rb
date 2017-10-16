@@ -10,19 +10,29 @@ get '/applyingdeals' do
   @burgers = Burger.all
   @deals = Deal.all
   @applyingdeals = ApplyingDeal.all
+  @restaurants = Restaurant.all
   erb (:"/applyingdeals/index")
 end
 
 #create
 get '/applyingdeals/new' do
-  @burgers = Burger.all()
+  @restaurants = Restaurant.all
   @deals = Deal.all()
   erb ( :"applyingdeals/new" )
 end
 
-post '/applyingdeals' do
-  @burgers = Burger.all()
-  @deals = Deal.all()
+get '/applyingdeals/new_burger' do
+  @deal = Deal.find(params[:deal_id])
+  @restaurant = @deal.restaurant()
+  @burgers = @restaurant.burgers()
+  erb (:"applyingdeals/new_burger")
+end
+
+post '/applyingdeals/new_burger' do
+  # this :id needs to come from somewhere
+  # @deal = Deal.find(params[:deal_id])
+  # @restaurant = @deal.restaurant()
+  # @burgers = @restaurant.burgers()
   @applyingdeal = ApplyingDeal.new(params)
   @applyingdeal.save
   erb ( :"applyingdeals/show")

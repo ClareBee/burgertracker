@@ -1,0 +1,15 @@
+<h1>Add burgers to a deal: step two</h1>
+
+<form action="/applyingdeals/new_burger" method="POST">
+  <label>
+  <p>Which burgers do you want to add to <%= @deal.name %>?</p>
+    <select name="burger_id">
+          <% for burger in @burgers %>
+          <option value="<%= burger.id %>"><%= burger.name %></option>
+          <% end %>
+    </select>
+  </label>
+<!-- this form isn't returning the deal_id in order to make a new applyingdeal instance -->
+  <input type="text" name="deal_id" value="<%= @deal.id %>"></input>
+  <input class="btn" type='submit' value="submit">
+</form>
