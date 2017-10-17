@@ -64,6 +64,8 @@ end
 #destroy
 post '/applyingdeals/:id/delete' do
   deal = ApplyingDeal.find(params['id'])
+  @deals = Deal.all()
+  @burgers = Burger.all()
   deal.delete()
   redirect to("/deals")
 end

@@ -55,7 +55,7 @@ class ApplyingDeal
 
   def self.delete(id)
     sql = "DELETE FROM applyingdeals WHERE id = $1;"
-    values = [@id]
+    values = [id]
     SqlRunner.run( sql, values )
   end
 
@@ -117,8 +117,6 @@ class ApplyingDeal
     return array
   end
 
-  def discount ()
 
-  end
 
 end

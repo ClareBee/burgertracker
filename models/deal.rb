@@ -105,4 +105,11 @@ class Deal
     return array
   end
 
+  def find_applying_deal
+    sql = "SELECT applyingdeals.* FROM applyingdeals INNER JOIN burgers ON applyingdeals.burger_id = burgers.id WHERE applyingdeals.deal_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return ApplyingDeal.new(results.first)
+  end
+
 end
