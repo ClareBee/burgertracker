@@ -1,23 +1,29 @@
 <div id="burgershow">
-<h2>Here's your burger: </h2>
-<p class="subtitle"><%= @burger.name%></p>
-<p>Usual Price: £<%= @burger.price %></p>
-<p>Vegetarian? <% if @burger.veg == "t" %>
-               Yes </p>
-               <% elsif @burger.veg == "f" %>
-                No </p>
-                <%end %>
-<!-- replace with function: -->
-<p>Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
+  <img id="burgerdetail" src="/images/burgerlogo.png">
 
+  <h2>Here's your burger: </h2>
+  <p class="subtitle"><%= @burger.name%></p>
+  <p>Usual Price: £<%= @burger.price %></p>
 
-</p>
+  <p>Vegetarian?</p>
+  <div>
+    <% if @burger.veg == "f" %>
+    <%= "No" %></td>
+    <% elsif @burger.veg == "t" %>
+    <img src="/images/vegetarian-mark-90.png"></td>
+    <% end %>
+  </div>
 
-<a href="/burgers/<%=@burger.id%>/edit">Made a mistake?</a>
+    <p>Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
+    </p>
 
-<p>OR</p>
-<form  action="/burgers/<%=@burger.id%>/delete" method="post">
-  <input type="submit" value="Delete" class="btn--delete"/>
-</form>
+    <br>
+
+    <a href="/burgers/<%=@burger.id%>/edit">Made a mistake?</a>
+
+    <p>OR</p>
+    <form  action="/burgers/<%=@burger.id%>/delete" method="post">
+      <input type="submit" value="Delete" class="btn--delete"/>
+    </form>
 
 </div>

@@ -29,7 +29,7 @@
     <td>|</td>
     <td><a href="/deals/<%= deal.id%>"><%= deal.name %></a></td>
     <td>|</td>
-    <td><%= (deal.discount.to_f * 100).round(0) %>% off</td>
+    <td><%= (deal.discount.to_f).round(0) %>% off</td>
     <td>|</td>
     <td><a href="restaurants/<%=deal.restaurant.id%>"><%=deal.restaurant.name %></a></td>
     <td>|</td>

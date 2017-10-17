@@ -5,13 +5,13 @@ require_relative( '../models/burger')
 class Restaurant
 
   attr_reader :id
-  attr_accessor :name, :location, :url
+  attr_accessor :name, :location, :rating
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @location = options['location']
-    @url = options['url']
+    @rating = options['rating'].to_i
   end
 
   def save()
@@ -19,14 +19,14 @@ class Restaurant
     (
       name,
       location,
-      url
+      rating
     )
     VALUES
     (
       $1, $2, $3
     )
     RETURNING id;"
-    values = [@name, @location, @url]
+    values = [@name, @location, @rating]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -63,11 +63,11 @@ class Restaurant
     (
       name,
       location,
-      url
+      rating
     ) =
     ($1, $2, $3)
     WHERE id = $4;"
-    values = [@name, @location, @url, @id]
+    values = [@name, @location, @rating, @id]
     SqlRunner.run( sql, values)
   end
 

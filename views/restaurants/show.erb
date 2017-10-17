@@ -1,9 +1,9 @@
 <div id="showrest">
-<h1><%= @restaurant.name%></h1>
+<h1><%= @restaurant.name%>  <%="\u{1F31F}" * @restaurant.rating.to_i %></h1>
 <img src="/images/restaurant.png">
 <p class="subtitle">Location: <%= @restaurant.location %></p>
 <h1>Menu So Far: <% for burger in @restaurant.burgers %></h1>
-                                <a href="/burgers/<%=burger.id%>"><p class="subtitle>"><%= burger.name %></a></p>
+                                <p class="subtitle"><a href="/burgers/<%=burger.id%>"><%= burger.name %></a></p>
 
                                 <p class="subtitle">£<%= burger.price%></p>
                                 <br>

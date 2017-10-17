@@ -88,8 +88,9 @@ class Burger
   end
 
   def discount(deal)
-   discount = (@price.to_f * deal.discount.to_f)
-   return discount
+   discount = @price.to_f * deal.discount.to_f
+   discounted = discount.to_f / 100
+   return discounted
   end
 
 end

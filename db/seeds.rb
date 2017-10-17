@@ -12,14 +12,14 @@ Restaurant.delete_all()
 restaurant1 = Restaurant.new ({
   'name' => "Bob's Burgers",
   'location' => "14 Gordon Street",
-  'url' => "/images/kyle-mills-322995.jpg"
+  'rating' => 3
 })
 restaurant1.save()
 
 restaurant2 = Restaurant.new ({
   'name' => "Burgerama",
   'location' => "56 Chapel Hill",
-  'url' => "/images/burger.png"
+  'rating' => 4
   })
 restaurant2.save()
 
@@ -50,7 +50,7 @@ burger3.save()
 deal1 = Deal.new ({
   'name' => "Monday Extravaganza",
   'restaurant_id' => restaurant1.id,
-  'discount' => 0.50,
+  'discount' => 50,
   'day' => "Monday"
   })
 deal1.save()
@@ -58,7 +58,7 @@ deal1.save()
 deal2 = Deal.new ({
   'name' => "Quarter Off Quarterpounders",
   'restaurant_id' => restaurant2.id,
-  'discount' => 0.25,
+  'discount' => 25,
   'day' => "Monday"
   })
 deal2.save()
@@ -66,7 +66,7 @@ deal2.save()
 deal3 = Deal.new ({
   'name'=> "Half Price Fridays",
   'restaurant_id' => restaurant1.id,
-  'discount' => 0.50,
+  'discount' => 30,
   'day' => "Friday"
   })
 deal3.save()

@@ -30,7 +30,7 @@ img#bwburger {
   margin: 15px;
 }
 
-img#fastfood, img#deallogo {
+img#fastfood, img#deallogo, img#burgerdetail {
   width: 30%;
   float: right;
 }

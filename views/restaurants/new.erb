@@ -8,15 +8,15 @@
       <img id="fastfood" src="/images/restaurant.png">
       <label for="name">Restaurant Name:</label>
       <br>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" required>
       <br>
       <label for="location">Location:</label>
       <br>
-      <input type="location" name="location" id="location">
+      <input type="location" name="location" id="location" required>
       <br>
-      <label for="image">Image:</label>
+      <label for="rating">Rating Out of 5:</label>
       <br>
-      <input type="text" name="url" id="image">
+      <input type="number" name="rating" id="rating" min="0" max="5" required>
       <br>
       <input class="btn--submit" type="submit" value="New">
     </fieldset>

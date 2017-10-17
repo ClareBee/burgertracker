@@ -8,7 +8,7 @@ CREATE TABLE restaurants
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
   location VARCHAR(255),
-  url VARCHAR(255)
+  rating INT
 );
 
 CREATE TABLE burgers
