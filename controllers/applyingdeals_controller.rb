@@ -64,5 +64,5 @@ end
 post '/applyingdeals/:id/delete' do
   deal = ApplyingDeal.find(params['id'])
   deal.delete()
-  redirect to("/applyingdeals")
+  redirect to("/deals")
 end

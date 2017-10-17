@@ -1,5 +1,5 @@
 <div id ="dealconfirm">
-  <h2>Here's your deal: </h2>
+  <h2>That burger has been added to: </h2>
   <h1 id="dealio"><%= @applyingdeal.deal.name%></h1>
   <p class="subtitle">Available at: <%=(@applyingdeal.deal.restaurant).name %> on <%=@applyingdeal.deal.day%>s</p>
   <br>
@@ -21,7 +21,7 @@
     <a href="/applyingdeals/new">Add another burger to the deal?</a>
   </p>
   <p>OR</p>
-  <form  action="/deals/<%=@applyingdeal.deal.id%>/delete" method="post">
-    <input type="submit" value="Delete Deal" class="btn--delete"/>
+  <form  action="/applyingdeals/<%=@applyingdeal.id%>/delete" method="post">
+    <input type="submit" value="Delete From Deal" class="btn--delete"/>
   </form>
 </div>

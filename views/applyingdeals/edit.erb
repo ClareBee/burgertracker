@@ -1,23 +1,6 @@
 <form class="newentry" action="/applyingdeals/<%=@applyingdeal.id%>" method="post">
-  <fieldset>
-  <label>
-  Select a Deal:
-    <select name="deal_id">
-      <% for deal in @deals %>
-      <option value="<%= deal.id %>"><%= deal.name %></option>
-      <% end %>
-    </select>
-  </label>
 
-  <label>
-
-    Select a burger:
-    <select name="burger_id">
-      <% for burger in @burgers %>
-      <option value="<%= burger.id %>"><%= burger.name %></option>
-      <% end %>
-    </select>
-  </label>
+  <!-- this isn't being used - the application of a deal can be created or destroyed! -->
 
   <input class="btn--submit" type='submit' value="Apply Deal!">
 </fieldset>
