@@ -10,6 +10,10 @@ form.newentry {
   font-family: 'Bevan', cursive;
   font-size: 25px;
 }
+#rating, #discount {
+  width: 258px;
+}
+
 
 fieldset {
   border-radius: 15px;
@@ -25,5 +29,4 @@ input {
   font-size: 25px;
   line-height: 2.5em;
   border-radius: 10px;
-
 }

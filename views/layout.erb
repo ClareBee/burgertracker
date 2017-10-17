@@ -17,35 +17,33 @@
   <link rel="icon" href="/images/burgerlogo.png" />
 </head>
 
-  <body>
-      <div class="content">
+<body>
+  <div class="content">
     <header id="title">
       <img id="burgerbar" src="/images/title2.jpg">
     </header>
-  <nav class="navbar">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href= "/restaurants">Restaurants</a></li>
-    <li><a href= "/deals">Deals</a></li>
-    <li><a href="/burgers">Burgers</a></li>
-    <li><a href="/restaurants/new">New Restaurant</a></li>
-    <li><a href="/burgers/new">New Burger</a></li>
-    <li><a href="/deals/new">New Deal</a></li>
-    <li><a href="/applyingdeals/new">Add Burgers to a Deal</a></li>
-</ul>
-</nav>
-<!-- <header id="title">
-  <img src="/images/title.jpg">
-</header> -->
-      <section>
-        <%= yield %>
-      </section>
+    
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href= "/restaurants">Restaurants</a></li>
+        <li><a href= "/deals">Deals</a></li>
+        <li><a href="/burgers">Burgers</a></li>
+        <li><a href="/restaurants/new">New Restaurant</a></li>
+        <li><a href="/burgers/new">New Burger</a></li>
+        <li><a href="/deals/new">New Deal</a></li>
+        <li><a href="/applyingdeals/new">Add Burgers to a Deal</a></li>
+      </ul>
+    </nav>
 
+    <section>
+      <%= yield %>
+    </section>
 
+  </div>
 
-</div>
   <footer class="copyright">
-        2017 &copy; BurgerTracker
+    2017 &copy; BurgerTracker
   </footer>
-  </body>
+</body>
 </html>

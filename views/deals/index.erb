@@ -1,5 +1,6 @@
 <div id="dealsindex">
   <img id="calendar" src="/images/calendar.png">
+
   <h1>Deals by day of the week</h1>
     <% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
   <select name="day" id="daylist">
@@ -9,35 +10,40 @@
   </select>
 
 
-<h1>All the Deals</h1>
+  <h1>All the Deals</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Discount</th>
-    <th></th>
-    <th>Day</th>
-    <th></th>
-    <th>Restaurant</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% for deal in @deals %>
-  <tr>
-    <td><%= deal.day %></td>
-    <td>|</td>
-    <td><a href="/deals/<%= deal.id%>"><%= deal.name %></a></td>
-    <td>|</td>
-    <td><%= (deal.discount.to_f).round(0) %>% off</td>
-    <td>|</td>
-    <td><a href="restaurants/<%=deal.restaurant.id%>"><%=deal.restaurant.name %></a></td>
-    <td>|</td>
-    <td><form action="/deals/<%=deal.id%>/delete" method="post">
-      <input type="submit" value="Delete" class="btn--delete"/>
-    </form></td>
-  </tr>
-  <% end %>
-</table>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th></th>
+      <th>Deal</th>
+      <th></th>
+      <th>Discount</th>
+      <th></th>
+      <th>Restaurant</th>
+      <th></th>
+    </tr>
+    <% for deal in @deals %>
+    <tr>
+      <td><%= deal.day %></td>
+      <td>|</td>
+      <td><a href="/deals/<%= deal.id%>"><%= deal.name %></a></td>
+      <td>|</td>
+      <td><%= (deal.discount.to_f).round(0) %>% off</td>
+      <td>|</td>
+      <td><a href="restaurants/<%=deal.restaurant.id%>"><%=deal.restaurant.name %></a></td>
+      <td>|</td>
+      <td><form action="/deals/<%=deal.id%>/delete" method="post">
+        <input type="submit" value="Delete" class="btn--delete"/></form></td>
+      <td></td>
+      <td><form method="GET" action="/deals/<%=deal.id%>/edit">
+            <input class="btn--submit" type="submit" value="Edit">
+          </form>
+      </td>
+
+
+    </tr>
+    <% end %>
+  </table>
 
 </div>

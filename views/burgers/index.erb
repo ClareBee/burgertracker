@@ -1,7 +1,9 @@
 <section>
+
   <div id="allburgers">
   <h1>All the Burgers Around Town</h1>
     <img src="/images/burgerlogo.png" id="newburgerlogo">
+
   <table>
     <tr>
       <th>Name</th>
@@ -17,19 +19,22 @@
       <td>|</td>
       <td>£<%= '%.2f' % burger.price %></td>
       <td>|</td>
-      <% if burger.veg == "f" %>
 
+      <% if burger.veg == "f" %>
       <td><%= "No" %></td>
       <% elsif burger.veg == "t" %>
       <td> <img src="/images/vegetarian-mark-90.png"></td>
         <% end %>
-      <td>
-      <form action="/burgers/<%=burger.id%>/delete" method="post">
-        <input type="submit" value="Delete" class="btn--delete"/>
-      </form></td>
-      </tr>
 
+      <td>
+        <form action="/burgers/<%=burger.id%>/delete" method="post">
+        <input type="submit" value="Delete" class="btn--delete"/>
+        </form>
+      </td>
+
+    </tr>
       <% end %>
-  </table>
-</div>
+
+    </table>
+  </div>
 </section>

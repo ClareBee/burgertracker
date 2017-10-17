@@ -33,6 +33,20 @@ post '/deals' do
   redirect to("/deals")
 end
 
+get '/deals/:id/edit' do
+  @restaurants = Restaurant.all()
+  @deal = Deal.find(params['id'])
+  erb( :"deals/edit" )
+end
+
+post '/deals/:id' do
+  @restaurants= Restaurant.all()
+  @deal = Deal.new(params)
+  @deal.update()
+  redirect to ("/deals")
+end
+
+
 post '/deals/:id/delete' do
   deal = Deal.find(params['id'])
   @burgers = Burger.all()

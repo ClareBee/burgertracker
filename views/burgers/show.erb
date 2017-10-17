@@ -1,11 +1,11 @@
 <div id="burgershow">
   <img id="burgerdetail" src="/images/burgerlogo.png">
 
-  <h2>Here's your burger: </h2>
-  <p class="subtitle"><%= @burger.name%></p>
-  <p>Usual Price: £<%= @burger.price %></p>
+  <h1>Here's your burger: </h1>
+  <h1><%= @burger.name%></h1>
+  <p class="subtitle">Usual Price: £<%= @burger.price %></p>
 
-  <p>Vegetarian?</p>
+  <p class="subtitle">Vegetarian?</p>
   <div>
     <% if @burger.veg == "f" %>
     <%= "No" %></td>
@@ -14,7 +14,7 @@
     <% end %>
   </div>
 
-    <p>Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
+    <p class="subtitle">Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
     </p>
 
     <br>

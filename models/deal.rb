@@ -75,7 +75,6 @@ class Deal
     return Deal.new(results.first)
   end
 
-# check if this works
   def self.list(day)
     sql = "SELECT * FROM deals WHERE day = $1;"
     values = [day]
@@ -105,11 +104,5 @@ class Deal
     array = results.map {|name| Burger.new(name)}
     return array
   end
-
-
-
-
-
-
 
 end

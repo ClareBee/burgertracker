@@ -29,10 +29,6 @@ get '/applyingdeals/new_burger' do
 end
 
 post '/applyingdeals/new_burger' do
-  # this :id needs to come from somewhere
-  # @deal = Deal.find(params[:deal_id])
-  # @restaurant = @deal.restaurant()
-  # @burgers = @restaurant.burgers()
   @applyingdeal = ApplyingDeal.new(params)
   @applyingdeal.save
   erb ( :"applyingdeals/show")

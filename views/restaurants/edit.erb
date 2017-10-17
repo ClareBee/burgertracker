@@ -1,17 +1,19 @@
 <div id="edit">
 
-  <form class="newentry" action="/restaurants/<%=@restaurant.id%>" method="POST">
-    <fieldset>
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<%=@restaurant.name%>">
-      <label for="location">Location:</label>
-      <input type="location" name="location" id="location" value="<%=@restaurant.location%>">
-      <label for="rating">Rating:</label>
-      <input type="text" name="rating" id="rating">
-      <input class="btn--submit" type='submit' value="New">
+  <div class="flex">
+    <form class="newentry" action="/restaurants/<%=@restaurant.id%>" method="POST">
+      <fieldset>
 
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%=@restaurant.name%>">
+        <label for="location">Location:</label>
+        <input type="location" name="location" id="location" value="<%=@restaurant.location%>">
+        <label for="rating">Rating:</label>
+        <input type="text" name="rating" id="rating">
+        <input class="btn--submit" type='submit' value="New">
 
-    </fieldset>
-  </form>
+      </fieldset>
+    </form>
+  </div>
   
 </div>

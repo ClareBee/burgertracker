@@ -1,17 +1,20 @@
-<div id="addnewtwo">
-<h1>Add burgers to a deal: Step two</h1>
 
-<form class="newentry" action="/applyingdeals/new_burger" method="POST">
-  <label>
-  <p class="subtitle">Which burgers do you want to add to <%= @deal.name %>?</p>
-    <select name="burger_id" id="burgerlist">
+<div id="addnewtwo">
+  <h1>Add burgers to a deal: Step two</h1>
+
+  <div class="flex">
+    <form class="newentry" action="/applyingdeals/new_burger" method="POST">
+      <label>
+        <p class="subtitle">Which burgers do you want to add to <%= @deal.name %>?</p>
+        <select name="burger_id" id="burgerlist">
           <% for burger in @burgers %>
           <option value="<%= burger.id %>"><%= burger.name %> </option>
           <% end %>
-    </select>
-  </label>
+        </select>
+      </label>
 
-  <input type="hidden" name="deal_id" value="<%= @deal.id %>"></input>
-  <input class="btn--submit" type='submit' value="submit">
-</form>
+      <input type="hidden" name="deal_id" value="<%= @deal.id %>"></input>
+      <input class="btn--submit" type='submit' value="submit">
+    </form>
+  </div>
 </div>

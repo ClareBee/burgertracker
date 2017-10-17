@@ -72,7 +72,6 @@ class Burger
     SqlRunner.run( sql, values)
   end
 
-# why doesn't this work anymore - do i have to do a Restaurant.new here?
   def find_restaurant
     sql = "SELECT * FROM restaurants WHERE restaurants.id = $1;"
     values = [@restaurant_id]

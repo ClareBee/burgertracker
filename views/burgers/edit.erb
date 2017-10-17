@@ -1,23 +1,27 @@
-<form class="newentry" action="/burgers/<%=@burger.id%>" method="POST">
-  <fieldset>
+<div class="flex">
+  <form class="newentry" action="/burgers/<%=@burger.id%>" method="POST">
+    <fieldset>
 
-    <select name="restaurant_id" id="rest">
-    <% @restaurants.each do |restaurant|%>
-      <option value="<%= restaurant.id %>"><%= restaurant.name %></option>
-      <% end %>
-    </select>
-    <br>
-    <label for="name">Name:</label>
-    <br>
-    <input type="text" name="name" id="name" value="<%=@burger.name%>">
-    <br>
-    <label for="price">Price:</label>
-    <br>
-    <input type="number" name="price" id="price" value="<%=@burger.price%>">
-    <br>
-    <label for="veg">Vegetarian?</label>
-    <br>
-    <input type="text" name="veg" id="veg" value="<%=@burger.veg%>">
-
-  </fieldset>
-</form>
+      <select name="restaurant_id" id="rest">
+        <% @restaurants.each do |restaurant|%>
+        <option value="<%= restaurant.id %>"><%= restaurant.name %></option>
+        <% end %>
+      </select>
+      <br>
+      <label for="name">Name:</label>
+      <br>
+      <input type="text" name="name" id="name" value="<%=@burger.name%>">
+      <br>
+      <label for="price">Price: £</label>
+      <br>
+      <input type="number" name="price" id="price" value="<%=@burger.price%>">
+      <br>
+      <label for="veg">Vegetarian?</label>
+      <br>
+      <input type="text" name="veg" id="veg" value="<%=@burger.veg%>">
+      <br>
+      <input class="btn--submit" type="submit" value="New Burger!">
+    </fieldset>
+  </form>
+  
+</div>

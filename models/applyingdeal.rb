@@ -59,14 +59,12 @@ class ApplyingDeal
     SqlRunner.run( sql, values )
   end
 
-
   def self.find(id)
     sql = "SELECT * FROM applyingdeals WHERE id = $1;"
     values =[id]
     results = SqlRunner.run(sql, values)
     return ApplyingDeal.new(results.first)
   end
-
 
   def burger()
     sql = "SELECT * FROM burgers where id = $1;"
@@ -111,7 +109,6 @@ class ApplyingDeal
     return array
   end
 
-# why doesn't this work?
   def self.all_deals()
     sql = "SELECT deals.* FROM deals INNER JOIN burgers ON deals.restaurant_id = burgers.restaurant_id WHERE deals.id = $1;"
     values = [@deal_id]
