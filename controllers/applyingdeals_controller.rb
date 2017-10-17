@@ -6,6 +6,7 @@ require_relative('../models/restaurant.rb')
 require_relative( '../models/burger.rb' )
 require_relative( '../models/deal.rb' )
 
+#this isn't needed as the routes bypass the index and show the deal on the deals/index
 get '/applyingdeals' do
   @burgers = Burger.all
   @deals = Deal.all
@@ -43,7 +44,7 @@ get '/applyingdeals/:id' do
    erb( :"applyingdeals/show" )
  end
 
-#update
+#update - this also isn't needed as you can only create or destroy applyingdeals
 get '/applyingdeals/:id/edit' do
   @burgers = Burger.all()
   @deals = Deal.all()

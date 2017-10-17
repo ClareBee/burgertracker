@@ -117,4 +117,8 @@ class ApplyingDeal
     return array
   end
 
+  def discount ()
+
+  end
+
 end
