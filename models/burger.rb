@@ -1,5 +1,6 @@
 require_relative( '../db/sql_runner' )
 require_relative ('../models/restaurant')
+require_relative ('../models/applyingdeal')
 
 class Burger
 
