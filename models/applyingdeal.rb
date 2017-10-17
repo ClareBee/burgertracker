@@ -36,7 +36,7 @@ class ApplyingDeal
     = (
     $1, $2
     ) WHERE id = $3;"
-    values = [@id]
+    values = [@deal_id, @burger_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -55,7 +55,7 @@ class ApplyingDeal
 
   def self.delete(id)
     sql = "DELETE FROM applyingdeals WHERE id = $1;"
-    values = [id]
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 
@@ -116,4 +116,5 @@ class ApplyingDeal
     array = results.map {|every| Deal.new(every)}
     return array
   end
+
 end
