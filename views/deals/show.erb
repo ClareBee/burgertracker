@@ -8,7 +8,7 @@
 
 <h1><%= @deal.name %></h1>
 <form action="/applyingdeals/new">
-<input type="submit" value="Add a new burger to the deal" />
+<input class="btn--submit" type="submit" value="Add a new burger to the deal" />
 </form>
 <% for burger in @deal.find_burgers %>
 <tr>

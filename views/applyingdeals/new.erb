@@ -1,14 +1,18 @@
+<div id="addnewone">
 <h1>Add burgers to a deal: Step one</h1>
 
 <form class="newentry" action="/applyingdeals/new_burger" method="get">
   <label>
-  Which deal do you want to add a burger to?
-    <select name="deal_id">
+  <p class="subtitle">Which deal do you want to add a burger to?</p>
+  <br>
+    <select name="deal_id" id="dealdays">
       <% for deal in @deals %>
       <option value="<%= deal.id %>"><%= deal.name %> at <%= deal.restaurant.name %></option>
       <% end %>
     </select>
   </label>
-
-  <input class="btn" type='submit' value="Choose deal">
+  <br>
+  <br>
+  <input class="btn--submit" type='submit' value="Choose deal">
 </form>
+</div>

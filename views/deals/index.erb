@@ -1,3 +1,13 @@
+<div id="dealsindex">
+  <h1>Deals by day of the week</h1>
+    <% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+  <select name="day" id="daylist">
+      <% for day in @days %>
+    <option><span id="byday"> <%=day %> </span> : | <%= Deal.list(day) %> | </option>
+      <% end %>
+  </select>
+
+
 <h1>All the Deals</h1>
 
 <table>
@@ -10,7 +20,6 @@
     <th></th>
     <th>Restaurant</th>
     <th></th>
-
   </tr>
   <% for deal in @deals %>
   <tr>
@@ -20,28 +29,13 @@
     <td>|</td>
     <td><%= (deal.discount.to_f * 100).round(0) %>% off</td>
     <td>|</td>
-
-
-
-
     <td><a href="restaurants/<%=deal.restaurant.id%>"><%=deal.restaurant.name %></a></td>
     <td>|</td>
     <td><form action="/deals/<%=deal.id%>/delete" method="post">
-      <input type="submit" value="Delete" id="delete"/>
+      <input type="submit" value="Delete" class="btn--delete"/>
     </form></td>
   </tr>
   <% end %>
 </table>
 
-<!-- <h1>Deals by day of the week</h1>
-<% @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]%>
-<% for day in @days %>
-<p> <%=day %> = <%= Deal.list(day) %></p>
-<% end %>
-
-<!form action get? -->
-<!-- <select name="day" id="day>">
-<% @days.each do |aday|%>
-  <option id ="daybox" value="<%= day %>"> <%= aday %></option>
-<% end %>
-</select> -->
+</div>

@@ -1,8 +1,8 @@
 
 <h1>Discounts from Deals</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/applyingdeals/new">New deal!</a>
+<p class="submit">
+  <a class="submit" href="/applyingdeals/new">New deal!</a>
 </p>
 
 <!-- insert search function here -->
@@ -16,6 +16,6 @@
     <p>New Price: £<%= '%.2f' % (discount.burger.price.to_f - (discount.deal.discount.to_f * discount.burger.price.to_f)) %></p>
     <p>Amount saved: £<%= '%.2f' % (discount.deal.discount.to_f * discount.burger.price.to_f) %></p>
     <form action="/applyingdeals/<%= discount.id %>/delete" method="POST">
-        <input class="" type="submit" value="delete" />
+        <input class="btn--delete" type="submit" value="delete" />
     </form>
   <% end %>

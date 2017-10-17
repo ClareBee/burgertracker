@@ -1,27 +1,28 @@
-
+<div id="showrest">
 <h1><%= @restaurant.name%></h1>
-<p>Location: <%= @restaurant.location %></p>
-<!-- replace with function: -->
-<!-- why does this fail if there aren't any burgers yet? -->
+<p class="subtitle">Location: <%= @restaurant.location %></p>
 <h1>Menu So Far: <% for burger in @restaurant.burgers %></h1>
-                                <a href="/burgers/<%=burger.id%>"><%= burger.name %></a>
+                                <p class="subtitle>"<a href="/burgers/<%=burger.id%>"><%= burger.name %></a></p>
 
-                                      £<%= burger.price%><br>
-                                <% end %></p>
+                                <p class="subtitle">£<%= burger.price%></p>
+                                <br>
+                                <% end %>
 <h1>Deals for <%=@restaurant.name %></h1>
                     <% for deal in @restaurant.deals %>
-                        <a href="/deals/<%= deal.id %>"><%= deal.name %></a>
+                        <p class="subtitle"><a href="/deals/<%= deal.id %>"><%= deal.name %></a></p>
                         <br>
                     <% end %>
                         <br>
 <img src="images/<%=@restaurant.url%>" alt="burger">
 <br>
-<a href="/restaurants/<%= @restaurant.id %>/edit">Made a mistake? Edit it here.</a>
+<a href="/restaurants/<%= @restaurant.id %>/edit" id="editlink">Made a mistake? Edit it here.</a>
 
-<p>OR</p>
+<h1>OR</h1>
 <form action="/burgers/new">
-<input type="submit" value="Add a new burger" />
+<input type="submit" value="Add a new burger" class="btn--submit"/>
 </form>
 <form  action="/restaurants/<%=@restaurant.id%>/delete" method="post">
-  <input type="submit" value="Delete Restaurant" id="delete"/>
+  <input type="submit" value="Delete Restaurant" class="btn--delete"/>
 </form>
+
+</div>

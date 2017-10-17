@@ -6,7 +6,7 @@
       <% for restaurant in @restaurants %>
         <h3><a href="/restaurants/<%= restaurant.id%>"> <%= restaurant.name %> </a> </h3>
         <form action="/restaurants/<%=restaurant.id%>/delete" method="post">
-          <input type="submit" value="Delete Restaurant" id="delete"/>
+          <input type="submit" value="Delete Restaurant" class="btn--delete"/>
         </form>
       <% end %>
 

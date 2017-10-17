@@ -7,8 +7,39 @@ a:hover {
   color: #F21B3F;
 }
 
-#delete {
-  font-family: 'Bevan', cursive ;
-  background-color: #FFCF4D;
+a#editlink {
+  text-decoration: none;
+  color: #221E22;
+}
+a#editlink:hover {
+  cursor: pointer;
+  color: #F21B3F;
+}
+
+input.btn--delete {
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+  background-color: #F21B3F;
   border-radius: 10px;
+  padding: 10px;
+}
+input.btn--delete:hover {
+  cursor: pointer;
+  background-color: #F78296;
+}
+
+input.btn--submit {
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+  background-color: rgb(85, 26, 139);
+  color: #FBFBFD;
+  text-shadow: 0px 2px 0px #221E22;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+input.btn--submit:hover {
+  cursor: pointer;
+  background-color: #221E22;
 }

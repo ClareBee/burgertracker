@@ -1,3 +1,16 @@
 form.newentry {
   background-color: #FFCF4D;
+  border-radius: 15px;
+  border: 6px solid #D0CDD7;
+  padding: 15px;
+}
+
+#rest {
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+}
+
+fieldset {
+  border-radius: 15px;
+  border: none;
 }

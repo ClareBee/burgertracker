@@ -39,8 +39,40 @@ div#restaurantindex {
   padding: 0px 25px 25px 25px;
 }
 
+div#newBurger, div#dealsindex, div#newdeal, div#newrest, div#showrest {
+  margin-left: 50px;
+  padding: 0px 25px;
+}
+
+div#addnewone, div#addnewtwo {
+  margin-left: 40px;
+  padding: 10px 25px;
+}
+
 table {
   background-color: #FBFBFD;
   border: 5px solid #D0CDD7;
   border-radius: 15px;
+}
+
+select#daylist {
+    font-family: 'Bevan', cursive;
+    font-size: 25px;
+    border: 2px solid #221E22;
+    background-color: #FFCF4D;
+    height: 3em;
+}
+span#byday {
+    color: white;
+}
+
+select#dealdays {
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+  border: 2px solid #221E22;
+  background-color: #FBFBFD;
+}
+
+.subtitle {
+  font-size: 25px;
 }
