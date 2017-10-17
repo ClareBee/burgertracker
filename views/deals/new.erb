@@ -1,19 +1,24 @@
 <div id="newdeal">
-<h1>New Deal</h1>
+<h1>Spotted a new deal?</h1>
 <form class="newentry" action="/deals" method="POST">
 <fieldset>
-
-  <select name="restaurant_id" id="rest>">
+  <img id="deallogo" src="/images/moneybag.png">
+  <select name="restaurant_id" id="newdealindex">
   <% @restaurants.each do |restaurant|%>
     <option id ="restaurants" value="<%= restaurant.id %>"><%= restaurant.name %></option>
     <% end %>
   </select>
-
-  <label for="name">Name:</label>
+  <br>
+  <label for="name">Deal Name:</label>
+  <br>
   <input type="text" name="name" id="name" required>
-  <label for="discount">Discount:</label>
+  <br>
+  <label for="discount">Discount (%):</label>
+  <br>
   <input type="number" min="0" max="1" step=".01" placeholder="Enter as a decimal" name="discount" id="discount" required>
+  <br>
   <label for="day">Day</label>
+  <br>
   <select name="day" id="weekdays">
     <option class ="week" value="Monday">Monday</option>
     <option class ="week" value="Tuesday">Tuesday</option>
@@ -23,6 +28,7 @@
     <option class ="week" value="Saturday">Saturday</option>
     <option class ="week" value="Sunday">Sunday</option>
   </select>
+  <br>
   <input class="btn--submit" type="submit" value="Add!">
 
 </fieldset>

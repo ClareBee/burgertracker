@@ -9,6 +9,7 @@
       <th>Usual Price</th>
       <th></th>
       <th>Vegetarian?</th>
+      <th></th>
     </tr>
     <% for burger in @burgers %>
     <tr>
@@ -20,7 +21,7 @@
 
       <td><%= "No" %></td>
       <% elsif burger.veg == "t" %>
-      <td> <%= "Yes" %></td>
+      <td> <img src="/images/vegetarian-mark-90.png"></td>
         <% end %>
       <td>
       <form action="/burgers/<%=burger.id%>/delete" method="post">

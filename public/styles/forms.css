@@ -3,6 +3,7 @@ form.newentry {
   border-radius: 15px;
   border: 6px solid #D0CDD7;
   padding: 15px;
+  width: 75%;
 }
 
 #rest {
@@ -13,4 +14,16 @@ form.newentry {
 fieldset {
   border-radius: 15px;
   border: none;
+}
+
+label {
+  font-size: 25px;
+  line-height: 3em;
+}
+
+input {
+  font-size: 25px;
+  line-height: 2.5em;
+  border-radius: 10px;
+
 }

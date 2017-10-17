@@ -1,5 +1,6 @@
+<div id="burgershow">
 <h2>Here's your burger: </h2>
-<p>Name: <%= @burger.name%></p>
+<p class="subtitle"><%= @burger.name%></p>
 <p>Usual Price: £<%= @burger.price %></p>
 <p>Vegetarian? <% if @burger.veg == "t" %>
                Yes </p>
@@ -18,3 +19,5 @@
 <form  action="/burgers/<%=@burger.id%>/delete" method="post">
   <input type="submit" value="Delete" class="btn--delete"/>
 </form>
+
+</div>

@@ -1,12 +1,18 @@
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #F1F1F9;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Open Sans', sans-serif;
   color: #221E22;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-
 
 .container {
   display: flex;
@@ -20,7 +26,6 @@ body {
   height: 200px;
   margin: auto;
   text-align: center;
-
 }
 
 h1, h2, h3 {
@@ -34,17 +39,17 @@ div#allburgers {
   padding: 0px 25px;
 }
 
-div#restaurantindex {
+div#restaurantindex, div#dealconfirm {
   margin-left: 20px;
   padding: 0px 25px 25px 25px;
 }
 
-div#newBurger, div#dealsindex, div#newdeal, div#newrest, div#showrest {
+div#newBurger, div#dealsindex, div#newdeal, div#newrest, div#showrest, div#addeddeal {
   margin-left: 50px;
   padding: 0px 25px;
 }
 
-div#addnewone, div#addnewtwo {
+div#addnewone, div#addnewtwo, div#burgershow {
   margin-left: 40px;
   padding: 10px 25px;
 }
@@ -56,23 +61,39 @@ table {
 }
 
 select#daylist {
-    font-family: 'Bevan', cursive;
-    font-size: 25px;
-    border: 2px solid #221E22;
-    background-color: #FFCF4D;
-    height: 3em;
-}
-span#byday {
-    color: white;
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+  border: 2px solid #221E22;
+  background-color: #FFCF4D;
+  height: 3em;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
-select#dealdays {
+select#dealslist, select#burgerlist {
   font-family: 'Bevan', cursive;
   font-size: 25px;
   border: 2px solid #221E22;
   background-color: #FBFBFD;
+  height: 3em;
+}
+
+select#restlist, select#newdealindex, select#weekdays {
+  font-family: 'Bevan', cursive;
+  font-size: 25px;
+  border: 2px solid #221E22;
+  background-color: #DCDEF2;
+  height: 3em;
+  width: 30%;
+  margin-right: 15px;
 }
 
 .subtitle {
   font-size: 25px;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+.copyright {
+  flex-shrink: 0;
 }

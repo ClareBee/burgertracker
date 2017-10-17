@@ -1,24 +1,35 @@
+<div id="addeddeal">
+  <h1><%= @deal.name %></h1>
+  <br>
+  <form action="/applyingdeals/new">
+    <input class="btn--submit" type="submit" value="Add a new burger to the deal" />
+  </form>
 
-<table>
-<th>Burger:</th>
-<th></th>
-<th>Price:</th>
-<th>Discount:</th>
-<th>New Price:</th>
+  <table>
+    <th>Burger</th>
+    <th></th>
+    <th>Price</th>
+    <th></th>
+    <th>Discount</th>
+    <th></th>
+    <th>New Price</th>
+    <th></th>
 
-<h1><%= @deal.name %></h1>
-<form action="/applyingdeals/new">
-<input class="btn--submit" type="submit" value="Add a new burger to the deal" />
-</form>
-<% for burger in @deal.find_burgers %>
-<tr>
-<td> <%= burger.name %></td>
-<td></td>
-<td>£<%= '%.2f' % burger.price %></td>
-<td>£<%= '%.2f' % burger.discount(@deal) %></td>
-<td>£<%= '%.2f' % (burger.price.to_f - burger.discount(@deal).to_f) %></td>
-<td>
-<% end %>
+    <br>
+    <% for burger in @deal.find_burgers %>
+    <tr>
+      <td> <%= burger.name %></td>
+      <td>|</td>
+      <td>£<%= '%.2f' % burger.price %></td>
+      <td>|</td>
+      <td>£<%= '%.2f' % burger.discount(@deal) %></td>
+      <td>|</td>
+      <td>£<%= '%.2f' % (burger.price.to_f - burger.discount(@deal).to_f) %></td>
+      <td>|</td>
+      <% end %>
 
-</tr>
-</table>
+    </tr>
+  </table>
+  <br>
+  <br>
+</div>

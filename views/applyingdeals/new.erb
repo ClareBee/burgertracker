@@ -2,15 +2,16 @@
 <h1>Add burgers to a deal: Step one</h1>
 
 <form class="newentry" action="/applyingdeals/new_burger" method="get">
+  <img id="plus" src="/images/plus.png">
   <label>
   <p class="subtitle">Which deal do you want to add a burger to?</p>
-  <br>
-    <select name="deal_id" id="dealdays">
+  </label>
+    <select name="deal_id" id="dealslist">
       <% for deal in @deals %>
       <option value="<%= deal.id %>"><%= deal.name %> at <%= deal.restaurant.name %></option>
       <% end %>
     </select>
-  </label>
+
   <br>
   <br>
   <input class="btn--submit" type='submit' value="Choose deal">

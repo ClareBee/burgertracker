@@ -3,15 +3,15 @@
 
 <form class="newentry" action="/applyingdeals/new_burger" method="POST">
   <label>
-  <p>Which burgers do you want to add to <%= @deal.name %>?</p>
-    <select name="burger_id">
+  <p class="subtitle">Which burgers do you want to add to <%= @deal.name %>?</p>
+    <select name="burger_id" id="burgerlist">
           <% for burger in @burgers %>
-          <option value="<%= burger.id %>"><%= burger.name %></option>
+          <option value="<%= burger.id %>"><%= burger.name %> </option>
           <% end %>
     </select>
   </label>
-<!-- this form isn't returning the deal_id in order to make a new applyingdeal instance -->
-  <input type="text" name="deal_id" value="<%= @deal.id %>"></input>
+
+  <input type="hidden" name="deal_id" value="<%= @deal.id %>"></input>
   <input class="btn--submit" type='submit' value="submit">
 </form>
 </div>

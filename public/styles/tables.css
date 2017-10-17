@@ -1,0 +1,15 @@
+
+table {
+  font-size: 30px;
+}
+
+th {
+  font-weight: bold;
+  font-size: 40px;
+  border-bottom: 2px solid #98969D;
+}
+
+td {
+  border-bottom: 2px solid #98969D;
+  text-align: center;
+}

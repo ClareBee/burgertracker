@@ -1,18 +1,26 @@
-<h2>Here's your deal: </h2>
-  <p>Name: <%= @applyingdeal.deal.name%></p>
-  <p>Available at: <%=(@applyingdeal.deal.restaurant).name %> on <%=@applyingdeal.deal.day%>s</p>
-  <p>Applies to: <% for burger in @applyingdeal.all_burgers %>
-                <%= burger.name %>
-                Usual price £<%= '%.2f' % burger.price %>
-                Discount: £<%= '%.2f' % burger.discount(@applyingdeal.deal) %>
-                New Price: £<%= '%.2f' % (burger.price.to_f - burger.discount(@applyingdeal.deal).to_f) %>
+<div id ="dealconfirm">
+  <h2>Here's your deal: </h2>
+  <h1><%= @applyingdeal.deal.name%></h1>
+  <p class="subtitle">Available at: <%=(@applyingdeal.deal.restaurant).name %> on <%=@applyingdeal.deal.day%>s</p>
+  <p class="subtitle">Applies to:
+    <% for burger in @applyingdeal.all_burgers %>
+    <%= burger.name %>
+    <br>
+    Usual price: £<%= '%.2f' % burger.price %>
+    <br>
+    Discount:   £<%= '%.2f' % burger.discount(@applyingdeal.deal) %>
+    <br>
+    New Price: £<%= '%.2f' % (burger.price.to_f - burger.discount(@applyingdeal.deal).to_f) %>
 
-                <% end%>
+    <% end%>
   </p>
 
-<a href="/deals/<%=@applyingdeal.deal.id%>/edit">Made a mistake?</a>
-<a href="/applyingdeals/new">Add another burger to the deal?</a>
-<p>OR</p>
-<form  action="/deals/<%=@applyingdeal.deal.id%>/delete" method="post">
-  <input type="submit" value="Delete" class="btn--delete"/>
-</form>
+  <br>
+  <p class="subtitle">
+    <a href="/applyingdeals/new">Add another burger to the deal?</a>
+  </p>
+  <p>OR</p>
+  <form  action="/deals/<%=@applyingdeal.deal.id%>/delete" method="post">
+    <input type="submit" value="Delete" class="btn--delete"/>
+  </form>
+</div>

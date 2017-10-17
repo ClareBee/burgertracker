@@ -13,13 +13,29 @@ img#newburgerlogo {
   margin: 10px 50px 25px 25px;
   background-color: #F21B3F;
   border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
+}
+
+img#addburgerlogo {
+  float: right;
 }
 
 img#bwburger {
   width: 400px;
   float: right;
-
+  border: 2px solid #221E22;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
   border-radius: 10px;
   padding: 5px;
   margin: 15px;
+}
+
+img#fastfood, img#deallogo {
+  width: 30%;
+  float: right;
+}
+
+img#plus, img#calendar {
+  width: 20%;
+  float: right;
 }

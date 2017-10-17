@@ -1,22 +1,27 @@
 <div id="newBurger">
-<h1>Found a new burger?</h1>
+<h1>Spotted a new burger?</h1>
 
 <form class="newentry" action="/burgers" method="POST">
   <fieldset>
+    <img id="addburgerlogo" src="/images/burgerlogo.png">
 
-    <select name="restaurant_id" id="rest>">
+    <select name="restaurant_id" id="restlist">
       <% @restaurants.each do |restaurant|%>
       <option value="<%= restaurant.id %>"><%= restaurant.name %></option>
       <% end %>
     </select>
+
     <br>
     <label for="name">Name:</label>
+    <br>
     <input type="text" name="name" id="name">
     <br>
-    <label for="price">Price:</label>
+    <label for="price">Price (£):</label>
+    <br>
     <input type="number" min="1" step=".01" name="price" id="price">
     <br>
     <label for="veg">Vegetarian?</label>
+    <br>
     <input type="text" name="veg" id="veg">
     <br>
     <input class="btn--submit" type="submit" value="New Burger!">
