@@ -1,6 +1,7 @@
 require_relative( '../db/sql_runner' )
 require_relative( '../models/restaurant')
 require_relative( '../models/burger')
+require_relative( '../models/applyingdeal')
 
 
 

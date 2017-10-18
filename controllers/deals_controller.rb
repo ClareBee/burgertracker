@@ -23,6 +23,7 @@ end
 
 get '/deals/:id' do
   @deal = Deal.find(params['id'])
+  @applyingdeals = ApplyingDeal.all()
   @burgers = Burger.all()
   erb ( :"deals/show")
 end
