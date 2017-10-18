@@ -27,7 +27,7 @@
       <td>£<%= '%.2f' % (burger.price.to_f - burger.discount(@deal).to_f) %></td>
       <td>|</td>
       <td><form action="/applyingdeals/<%=@deal.find_applying_deal.id %>/delete" method="post">
-        <input type="submit" value="Delete" class="btn delete"/></form></td>
+        <input type="submit" value="Delete From Deal" class="btn--delete"/></form></td>
       <% end %>
 
     </tr>

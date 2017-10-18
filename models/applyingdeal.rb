@@ -117,6 +117,4 @@ class ApplyingDeal
     return array
   end
 
-
-
 end

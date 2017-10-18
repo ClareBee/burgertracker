@@ -16,7 +16,12 @@
 
     <p class="subtitle">Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
     </p>
+    <p class="subtitle">Part of deals:
+                        <% for deal in @burger.find_deals %>
+                        <%= deal.name %>
+                        <% end %>
 
+    </p>
     <br>
 
     <a href="/burgers/<%=@burger.id%>/edit">Made a mistake?</a>

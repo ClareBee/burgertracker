@@ -93,5 +93,12 @@ class Burger
    return discounted
   end
 
+  def find_deals
+    sql = "SELECT * FROM deals INNER JOIN applyingdeals ON deals.id = applyingdeals.deal_id WHERE applyingdeals.burger_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    array = results.map {|deal| Deal.new (deal)}
+    return array
+  end
 
 end

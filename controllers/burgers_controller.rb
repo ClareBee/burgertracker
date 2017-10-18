@@ -10,6 +10,7 @@ require_relative( '../models/applyingdeal.rb')
 get '/burgers' do
   @restaurants = Restaurant.all
   @burgers = Burger.all
+  @deals = Deal.all
   erb ( :"burgers/index" )
 end
 
@@ -29,6 +30,7 @@ end
 get '/burgers/:id' do
   @burger = Burger.find(params['id'])
   @restaurant = @burger.find_restaurant
+  @deals = Deal.all
   erb( :"burgers/show" )
  end
 
