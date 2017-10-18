@@ -1,19 +1,23 @@
 <div id="edit">
-
+  <p></p>
   <div class="flex">
+    <p></p>
     <form class="newentry" action="/restaurants/<%=@restaurant.id%>" method="POST">
       <fieldset>
 
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" value="<%=@restaurant.name%>">
+        <br>
         <label for="location">Location:</label>
         <input type="location" name="location" id="location" value="<%=@restaurant.location%>">
+        <br>
         <label for="rating">Rating:</label>
         <input type="text" name="rating" id="rating">
+        <br>
         <input class="btn--submit" type='submit' value="New">
 
       </fieldset>
     </form>
   </div>
-  
+
 </div>
