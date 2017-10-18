@@ -16,7 +16,7 @@
 
     <p class="subtitle">Available at: <a href="/restaurants/<%=@burger.find_restaurant.id %>"><%= @burger.find_restaurant.name %></a>
     </p>
-    <p class="subtitle">Part of deals:
+    <p class="subtitle">Currently features in these deals:
                         <% for deal in @burger.find_deals %>
                         <%= deal.name %>
                         <% end %>
