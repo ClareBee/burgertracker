@@ -1,3 +1,5 @@
+![image](burgerapp.png)
+
 # burgertracker
 Ruby/Sinatra Project with PostgreSQL and CRUD functionality
 
